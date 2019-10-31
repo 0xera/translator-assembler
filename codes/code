@@ -1,0 +1,19 @@
+START   1200
+zero:   word 0
+start:
+m:      mov ax, number
+        dec number
+        mov bx, number
+        mul bx
+        dec number
+        mul result
+        mov result, ax
+        cmp number,zero
+        jne m
+        mov result, ax
+number: word 10
+result: resw 1
+test: byte "Hello"
+test2: byte 56
+test2: byte 526h
+END start
